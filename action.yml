@@ -1,8 +1,8 @@
 name: Sync git markdown to Confluence
-description: Converts git markdown pages to Confluence and can create and update Confluence pages from github pages, with help from https://pypi.org/project/md2cf.
+description: Creates and updates Confluence-pages from GitHub markdown-pages, with help from https://pypi.org/project/md2cf.
 # input parameters to be taken from user
 inputs:
-  github_url:
+  github_f:
     required: true
     description: 'GitHub page to be converted, use raw page URL of readme.md'
   space:
@@ -27,7 +27,7 @@ runs:
     - ${{ inputs.confluence_token }}
     - ${{ inputs.parent_id }}
     - ${{ inputs.space }}
-    - ${{ inputs.github_url }}
+    - ${{ inputs.github_f }}
 
 
 # for publishing purposes
