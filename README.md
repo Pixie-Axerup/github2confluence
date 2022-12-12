@@ -4,7 +4,7 @@
 This is a GitHub Action for Creating and Updating Confluence pages from GitHub markdown pages. It uses [md2cf](https://pypi.org/project/md2cf/).
 
 
-To use this Action, create a GitHub Action workflow file looking like this:
+To use this Action, create a GitHub Action workflow file looking like this, and place it in folder .github/workflows:
 
 ```
 name: GitHub 2 Confluence
