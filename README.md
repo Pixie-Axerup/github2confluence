@@ -9,9 +9,6 @@ Currently it uses the following parameters:
 --parent_id
 --space
 --strip-top-header
---beautify-folders
---only-changed
---preface-markdown
 and folder or file
 
 The action takes the top header as the name of the Confluence page.
