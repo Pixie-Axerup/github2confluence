@@ -35,7 +35,7 @@ jobs:
         uses: ./
         with:
           confluence_host: "https://confluence.build.ingka.ikea.com/rest/api"
-          github_f: "README.md"
+          github_f: "confluence"
           space: "ITOI"
           parent_id: "234509639"
 
