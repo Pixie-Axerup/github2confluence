@@ -3,6 +3,18 @@
 ##About
 This is a GitHub Action for Creating and Updating Confluence pages from GitHub markdown pages. It uses [md2cf](https://pypi.org/project/md2cf/).
 
+Currently it uses the following parameters:
+--host
+--token
+--parent_id
+--space
+--strip-top-header
+--beautify-folders
+--only-changed
+--preface-markdown
+and folder or file
+
+The action takes the top header as the name of the Confluence page.
 
 To use this Action, create a GitHub Action workflow file looking like this, and place it in folder .github/workflows:
 
@@ -35,7 +47,7 @@ jobs:
           github_f: " "         #Github folder or file to sync. Files must be markdown.
           space: " "            #Confluence Space (https://your-confluence/display/SPACE/page-name).
           parent_id: " "        #Not mandatory, but if you have pages and sub-pages in Confluence, you can specify what page it should be under.
-          confluence_host: " "  #Confluence API adress.
+          confluence_host: " "  #Confluence API address.
           confluence_token: ${{ env.CONFLUENCE_TOKEN }}  #Your Confluence Token. 
 
 ```
