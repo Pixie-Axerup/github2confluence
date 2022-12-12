@@ -34,8 +34,9 @@ jobs:
       - name: Run action gh2cf
         uses: ./
         with:
-          github_f: "confluence"
+          confluence_host: "https://confluence.build.ingka.ikea.com/rest/api"
+          github_f: "README.md"
           space: "ITOI"
           parent_id: "234509639"
-          confluence_host: "https://confluence.build.ingka.ikea.com/rest/api"
+
           confluence_token: ${{ env.CONFLUENCE_TOKEN }}
