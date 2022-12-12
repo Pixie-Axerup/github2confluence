@@ -1,0 +1,36 @@
+name: Sync git markdown to Confluence
+description: Converts git markdown pages to Confluence and can create and update Confluence pages from github pages, with help from https://pypi.org/project/md2cf.
+# input parameters to be taken from user
+inputs:
+  github_url:
+    required: true
+    description: 'GitHub page to be converted, use raw page URL of readme.md'
+  space:
+    required: true
+    description: 'Space name in Confluence'
+  confluence_token:
+    required: true
+    description: 'Confluence token'
+  confluence_host:
+    required: true
+    description: 'Confluence api url'
+  parent_id:
+    required: false
+    description: 'optional confluence parent ID'
+
+# definition how we want our action
+runs:
+  using: docker # we are saying this action will run on docker
+  image: 'Dockerfile' # we will use our own Dockerfile to build an image and run it.
+  args:
+    - ${{ inputs.confluence_host }}
+    - ${{ inputs.confluence_token }}
+    - ${{ inputs.parent_id }}
+    - ${{ inputs.space }}
+    - ${{ inputs.github_url }}
+
+
+# for publishing purposes
+#branding: #generates a logo for our action
+#  icon: arrow-down #icon of the image
+#  color: blue # background color of the logo of our action

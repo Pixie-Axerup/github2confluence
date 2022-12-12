@@ -1,0 +1,41 @@
+name: GitHub to Confluence
+
+on:
+  push:
+    paths:
+      - "confluence/**"
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  CONFLUENCE_TOKEN: ${{ secrets.ATLASSIAN_CLOUD_TOKEN }}
+
+jobs:
+  setup-build-publish:
+    name: Translate and publish
+    runs-on: ubuntu-latest
+
+    steps:
+#      - name: Retrieve secrets from Vault
+#        uses: hashicorp/vault-action@v2.4.3
+#        with:
+#          url: https://vault-prod.build.ingka.ikea.com
+#          method: jwt
+#          namespace: opi-op
+#          role: github-read
+#          exportToken: true
+#          jwtGithubAudience: oi-o11y
+#          secrets: |
+#            secret/data/confluence token | CONFLUENCE_TOKEN
+      # Checkout sources
+      - uses: actions/checkout@v3
+
+      - name: Run action gh2cf
+        uses: ./
+        with:
+          github_url: "folder_cf"
+          space: "ITOI"
+          parent_id: "234509639"
+          confluence_host: "https://confluence.build.ingka.ikea.com/rest/api"
+          confluence_token: ${{ env.CONFLUENCE_TOKEN }}
