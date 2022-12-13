@@ -49,6 +49,15 @@ jobs:
 
 ```
 
+## Some constraints on the markdown
+
+### Images
+For images use 
+```
+![alt text](images/image.png)
+```
+And resize your images before uploading them to GitHub.
+
 
 ## Contributing
 Please read [CONTRIBUTING](./CONTRIBUTING.md) for more details about making a contribution to this project.
