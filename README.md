@@ -4,13 +4,15 @@
 This is a GitHub Action for Creating and Updating Confluence pages from GitHub markdown pages. It uses [md2cf](https://pypi.org/project/md2cf/).
 
 Currently it uses the following parameters:
+```
 --host
 --token
 --parent_id
 --space
+--preface-markdown "Content on this page is auto-generated from Github repository; do not edit here."
 --strip-top-header
 and folder or file
-
+```
 The action takes the top header as the name of the Confluence page.
 
 To use this Action, create a GitHub Action workflow file looking like this, and place it in folder .github/workflows:
