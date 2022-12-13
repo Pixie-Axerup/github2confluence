@@ -13,7 +13,7 @@ Currently it uses the following parameters:
 --strip-top-header
 and folder or file
 ```
-The action takes the top header as the name of the Confluence page.
+- The action takes the top header as the name of the Confluence page.
 
 To use this Action, create a GitHub Action workflow file looking like this, and place it in folder .github/workflows:
 

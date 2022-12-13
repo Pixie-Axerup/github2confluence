@@ -37,6 +37,6 @@ jobs:
           confluence_host: "https://confluence.build.ingka.ikea.com/rest/api"
           github_f: "confluence"
           space: "ITOI"
-#          parent_id: "234509639"
+          parent_id: "234509639"
 
           confluence_token: ${{ env.CONFLUENCE_TOKEN }}
