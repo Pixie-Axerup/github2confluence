@@ -30,7 +30,8 @@ on:
   workflow_dispatch:       #This is so you can run Action manually for testing
 
 env:
-  CONFLUENCE_TOKEN: ${{ secrets.ATLASSIAN_CLOUD_TOKEN }}     #Either have your Confluence token in Github Secret, or some other Secret manager.
+  CONFLUENCE_TOKEN: ${{ secrets.ATLASSIAN_CLOUD_TOKEN }}     #Either have your Confluence token in Github Secret, or some other Secret manager (below is example of how to get secret from Vault).
+
 
 jobs:
   setup-build-publish:
@@ -38,6 +39,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+#      - name: Retrieve secrets from Vault
+#        uses: hashicorp/vault-action@v2.4.3
+#        with:
+#          url: 
+#          method: 
+#          namespace: 
+#          role: 
+#          exportToken: 
+#          jwtGithubAudience: 
+#          secrets:
+    
       # Checkout sources
       - uses: actions/checkout@v3
 
